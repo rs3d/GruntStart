@@ -184,7 +184,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', [
                      // 'less',
                     
-                        'jshint',
+                     //   'jshint',
                        'requirejs',
                      // 'concat:js',
                      // 'concat:jslibs',
