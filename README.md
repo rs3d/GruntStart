@@ -1,3 +1,13 @@
+# Notes
+
+1. clone repo
+2. run: `npm install`
+3. run: `bower install`
+4. install chrome livereload and activate
+5. run: `grunt watch
+
+* * *
+
 # GruntStart
 A Grunt-enabled head-start with the H5BP, jQuery, Modernizr, and Respond. The building blocks to quickly get started with [Grunt](http://gruntjs.com/) to create an optimized website.
 
