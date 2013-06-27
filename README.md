@@ -6,6 +6,8 @@
 4. install chrome livereload and activate
 5. run: `grunt watch`
 
+Supports: less, requirejs (somehow, working on it), backbone/underscore 
+
 * * *
 
 # GruntStart
