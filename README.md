@@ -4,7 +4,7 @@
 2. run: `npm install`
 3. run: `bower install`
 4. install chrome livereload and activate
-5. run: `grunt watch
+5. run: `grunt watch`
 
 * * *
 
