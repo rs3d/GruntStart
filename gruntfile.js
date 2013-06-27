@@ -30,8 +30,9 @@ module.exports = function(grunt) {
 
 
     jshint: {
-      files: ['<%= files.grunt %>', '<%= files.js %>', '!js/main-optimzed.js'],
-
+      //files: ['<%= files.grunt %>', '<%= files.js %>'],
+      files: ['js/main.js', 'js/app/'],
+      //ignores: ['js/*.js','js/main-optimized.js'],
       options: {
         jquery: true,
         smarttabs: true,
@@ -84,8 +85,8 @@ module.exports = function(grunt) {
         dest: 'css/min/styles.min.css'
       },
 
-     /* js: {
-        src: ['<%= files.js %>'],
+      js: {
+        src: ['<%= files.js %>','js/main-optimized.js'],
         dest: 'js/libs/z.scripts.concat.js'
       },
       jslibs: {
@@ -97,14 +98,12 @@ module.exports = function(grunt) {
         dest: 'js/min/scripts.min.js'
       }
     },
-
     uglify: {
       dist: {
         src: ['js/libs/z.scripts.concat.js'],
         dest: 'js/min/scripts.min.js'
-      }*/
+      }
     },
-
 
     cssmin: {
       dist: {
@@ -147,7 +146,7 @@ module.exports = function(grunt) {
       options: {
         livereload: true
       },
-      files: ['<%= files.grunt %>', 'js/main-optimized.js', '<%= files.css %>', './css/*.less'],
+      files: ['<%= files.grunt %>', '<%= files.css %>', './css/*.less'],
       tasks: ['default']
     }
   });
@@ -183,15 +182,13 @@ module.exports = function(grunt) {
   // grunt.registerTask('default', 'lint concat:js concat:jslibs min concat:jsmin   csslint concat:css concat:csslibs cssmin concat:cssmin');
   grunt.registerTask('default', [
                      // 'less',
-                    
-                     //   'jshint',
-                       'requirejs',
-                     // 'concat:js',
-                     // 'concat:jslibs',
-                     // 'uglify',
-                     /// 'concat:jsmin',
+                      'jshint',
+                      'requirejs',
+                      'concat:js',
+                      'concat:jslibs',
+                      //'uglify',
+                      'concat:jsmin',
                       'less',
-
                       'csslint',
                       'concat:css',
                       'concat:csslibs',
@@ -199,7 +196,7 @@ module.exports = function(grunt) {
                       'concat:cssmin'
                     ]);
 
-  grunt.registerTask('release', ['requirejs']);
+  //grunt.registerTask('release', ['requirejs']);
   /**
    * Minify task
    *
