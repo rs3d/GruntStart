@@ -8,5 +8,6 @@
     "backbone-amd": "latest",
     "underscore-amd": "latest",
     "modernizr": "latest"
+
   }
 }

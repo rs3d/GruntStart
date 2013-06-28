@@ -7,30 +7,34 @@ module.exports = function(grunt) {
 
     files: {
       grunt: ['gruntfile.js'],
-      js:    ['js/*.js','js/app/*.js','js/app/views/*.js','js/app/model/*.js','js/app/collections/*.js'],
-      css:   ['css/*.css'],
-      img:   ['img']
+      js: ['js/*.js', 'js/app/*.js', 'js/app/views/*.js', 'js/app/model/*.js', 'js/app/collections/*.js'],
+      css: ['css/*.css'],
+      img: ['img']
     },
 
     smushit: {
-      path: { src: '<%= files.img %>' } // recursively replace minified images
+      path: {
+        src: '<%= files.img %>'
+      } // recursively replace minified images
     },
 
     less: {
       development: {
         options: {
-            paths: ["css"],
-            yuicompress: true
+          paths: ["css"],
+          yuicompress: true
         },
         files: {
-            "css/style.css": ["css/style.less"]
+          "css/style.css": ["css/style.less"]
         }
       }
     },
 
 
     jshint: {
-      files: ['<%= files.grunt %>', '<%= files.js %>', '!js/main-optimzed.js'],
+      files: ['<%= files.grunt %>', '<%= files.js %>'],
+      ///files: ['<%= files.grunt %>', '<%= files.js %>'],
+      excludes: ['js/min/*.js'],
 
       options: {
         jquery: true,
@@ -48,6 +52,7 @@ module.exports = function(grunt) {
         browser: true,
         devel: true,
         globals: {
+          FB: true,
           jQuery: true,
           console: true,
           require: true,
@@ -65,7 +70,7 @@ module.exports = function(grunt) {
           name: 'main',
           baseUrl: "js",
           mainConfigFile: "js/main.js",
-          out: "js/main-optimized.js"
+          out: "js/min/main-optimized.js"
         }
       }
     },
@@ -82,9 +87,9 @@ module.exports = function(grunt) {
       cssmin: {
         src: ['css/min/*.css'],
         dest: 'css/min/styles.min.css'
-      },
+      }
 
-     /* js: {
+      /* js: {
         src: ['<%= files.js %>'],
         dest: 'js/libs/z.scripts.concat.js'
       },
@@ -147,7 +152,7 @@ module.exports = function(grunt) {
       options: {
         livereload: true
       },
-      files: ['<%= files.grunt %>', 'js/main-optimized.js', '<%= files.css %>', './css/*.less'],
+      files: ['<%= files.grunt %>', '<%= files.js %>', '<%= files.css %>', './css/*.less'],
       tasks: ['default']
     }
   });
@@ -182,22 +187,22 @@ module.exports = function(grunt) {
    */
   // grunt.registerTask('default', 'lint concat:js concat:jslibs min concat:jsmin   csslint concat:css concat:csslibs cssmin concat:cssmin');
   grunt.registerTask('default', [
-                     // 'less',
-                    
-                     //   'jshint',
-                       'requirejs',
-                     // 'concat:js',
-                     // 'concat:jslibs',
-                     // 'uglify',
-                     /// 'concat:jsmin',
-                      'less',
+    // 'less',
 
-                      'csslint',
-                      'concat:css',
-                      'concat:csslibs',
-                      'cssmin',
-                      'concat:cssmin'
-                    ]);
+    'jshint',
+      'requirejs',
+    // 'concat:js',
+    // 'concat:jslibs',
+    // 'uglify',
+    /// 'concat:jsmin',
+    'less',
+
+    'csslint',
+      'concat:css',
+      'concat:csslibs',
+      'cssmin',
+      'concat:cssmin'
+  ]);
 
   grunt.registerTask('release', ['requirejs']);
   /**
