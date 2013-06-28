@@ -50,17 +50,11 @@
 
 -- Init RequireJS
 <script>
-<<<<<<< HEAD
-if (location.hostname === "cloudcontrolledd.com.robin.ber") { 
+if (location.hostname === "cloudcontrolled.com.robin.ber") { 
   document.write('<script data-main="js/main" src="js/vendor/requirejs/require.js"><\/script>')
 } else { 
   document.write('<script data-main="js/min/main-optimized" src="js/vendor/requirejs/require.js"><\/script>') 
-=======
-if (location.hostname === "cloudcontrolled.com.robin.ber") { 
-  document.write('<script data-main="js/main-optimized" src="js/vendor/requirejs/require.js"><\/script>')
-} else { 
-  document.write('<script data-main="js/min/scripts.min" src="js/vendor/requirejs/require.js"><\/script>') 
->>>>>>> f740d565b2034fc5942e006d2396c8d7982450a7
+  document.write('<script data-main="js/main-optimized" src="js/vendor/requirejs/require.js"><\/script>');
 }</script>
 <script>if (location.hostname === "cloudcontrolled.com.robin.ber") { document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=2"></' + 'script>') }</script>
 </body>
