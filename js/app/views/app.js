@@ -3,9 +3,10 @@ define(['backbone', 'app/views/facebook'], function(Backbone, FacebookView) {
 		facebook: null,
 
 		initialize: function() {
-			console.log('Wahoo!');
+			console.log('Wacsshoo!');
 			console.log(typeof FacebookView, typeof $, typeof _, typeof Backbone);
-			this.facebook = new FacebookView();
+			//this.facebook = new FacebookView();
+
 		}
 	});
 	return App;

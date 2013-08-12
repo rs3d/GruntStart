@@ -32,16 +32,10 @@ module.exports = function(grunt) {
 
 
     jshint: {
-<<<<<<< HEAD
-      files: ['<%= files.grunt %>', '<%= files.js %>'],
-      ///files: ['<%= files.grunt %>', '<%= files.js %>'],
-      excludes: ['js/min/*.js'],
 
-=======
       //files: ['<%= files.grunt %>', '<%= files.js %>'],
       files: ['js/main.js', 'js/app/'],
       //ignores: ['js/*.js','js/main-optimized.js'],
->>>>>>> f740d565b2034fc5942e006d2396c8d7982450a7
       options: {
         jquery: true,
         smarttabs: true,
@@ -93,15 +87,10 @@ module.exports = function(grunt) {
       cssmin: {
         src: ['css/min/*.css'],
         dest: 'css/min/styles.min.css'
-      }
+      },
 
-<<<<<<< HEAD
-      /* js: {
-        src: ['<%= files.js %>'],
-=======
       js: {
         src: ['<%= files.js %>','js/main-optimized.js'],
->>>>>>> f740d565b2034fc5942e006d2396c8d7982450a7
         dest: 'js/libs/z.scripts.concat.js'
       },
       jslibs: {
@@ -161,11 +150,7 @@ module.exports = function(grunt) {
       options: {
         livereload: true
       },
-<<<<<<< HEAD
-      files: ['<%= files.grunt %>', '<%= files.js %>', '<%= files.css %>', './css/*.less'],
-=======
-      files: ['<%= files.grunt %>', '<%= files.css %>', './css/*.less'],
->>>>>>> f740d565b2034fc5942e006d2396c8d7982450a7
+      files: ['<%= files.js %>','<%= files.grunt %>', '<%= files.css %>', './css/*.less'],
       tasks: ['default']
     }
   });
@@ -200,39 +185,20 @@ module.exports = function(grunt) {
    */
   // grunt.registerTask('default', 'lint concat:js concat:jslibs min concat:jsmin   csslint concat:css concat:csslibs cssmin concat:cssmin');
   grunt.registerTask('default', [
-<<<<<<< HEAD
-    // 'less',
-
-    'jshint',
-      'requirejs',
-    // 'concat:js',
-    // 'concat:jslibs',
-    // 'uglify',
-    /// 'concat:jsmin',
-    'less',
-
-    'csslint',
-      'concat:css',
-      'concat:csslibs',
-      'cssmin',
-      'concat:cssmin'
-  ]);
-=======
                      // 'less',
                       'jshint',
                       'requirejs',
-                      'concat:js',
-                      'concat:jslibs',
-                      //'uglify',
-                      'concat:jsmin',
+                      //'concat:js', //optional
+                      //'concat:jslibs', //optional
+                      //'uglify',//optional
+                      //'concat:jsmin', //optional
                       'less',
                       'csslint',
-                      'concat:css',
-                      'concat:csslibs',
-                      'cssmin',
-                      'concat:cssmin'
+                      //'concat:css', //optional
+                      //'concat:csslibs', //optional
+                      //'cssmin', //optional
+                      //'concat:cssmin' //optional
                     ]);
->>>>>>> f740d565b2034fc5942e006d2396c8d7982450a7
 
   //grunt.registerTask('release', ['requirejs']);
   /**
